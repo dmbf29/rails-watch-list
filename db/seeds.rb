@@ -18,3 +18,4 @@ response['results'].each do |movie_hash|
     rating: movie_hash['vote_average'].to_f
   )
 end
+puts "...Created #{Movie.count} movies"
