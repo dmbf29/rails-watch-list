@@ -4,7 +4,6 @@ puts "Cleaning DB..."
 List.destroy_all
 Movie.destroy_all
 
-
 puts "Calling Movie API..."
 json = URI.open('http://tmdb.lewagon.com/movie/top_rated').read
 response = JSON.parse(json)
