@@ -8,7 +8,14 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+document.addEventListener('turbolinks:load', () => {
+  $('.owl-carousel').owlCarousel();
+});
