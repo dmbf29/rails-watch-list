@@ -5,3 +5,13 @@
     <%= link_to 'Create', new_list_path, class: 'btn btn-primary'  %>
   </div>
 </div>
+<div class="container">
+  <h3>My Lists</h3>
+  <div class="container-scroll owl-carousel owl-theme">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: 'item' do %>
+        <%= image_tag "https://placeimg.com/640/480/animals", alt: "alttext" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
