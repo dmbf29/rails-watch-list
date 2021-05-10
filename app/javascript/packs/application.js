@@ -17,5 +17,22 @@ ActiveStorage.start()
 
 
 document.addEventListener('turbolinks:load', () => {
-  $('.owl-carousel').owlCarousel();
+  $('.owl-carousel').owlCarousel({
+    // stagePadding: 8,
+    loop: true,
+    margin: 10,
+    responsive:{
+      0:{
+        items:1
+       },
+      600:{
+       items:3
+       },
+      1000: {
+          items: 5
+      }
+     },
+     nav: true,
+     navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+   })
 });

@@ -4,6 +4,11 @@ puts "Cleaning DB..."
 List.destroy_all
 Movie.destroy_all
 
+15.times do
+  List.create!(name: Faker::Music.unique.genre)
+end
+
+
 puts "Calling Movie API..."
 json = URI.open('http://tmdb.lewagon.com/movie/top_rated').read
 response = JSON.parse(json)
