@@ -9,9 +9,28 @@
   <h3>My Lists</h3>
   <div class="owl-carousel owl-theme">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list), class: 'item' do %>
-        <%= image_tag "https://placeimg.com/640/480/animals", alt: "alttext" %>
-      <% end %>
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= list.name %>
+        <%= link_to "", list_path(list), class: 'card-link'  %>
+      </div>
+    <% end %>
+  </div>
+  <h3>Recommended</h3>
+  <div class="owl-carousel owl-theme">
+    <% @lists.reverse.each do |list| %>
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= list.name %>
+        <%= link_to "", list_path(list), class: 'card-link'  %>
+      </div>
+    <% end %>
+  </div>
+  <h3>Trending</h3>
+  <div class="owl-carousel owl-theme">
+    <% @lists.shuffle.each do |list| %>
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= list.name %>
+        <%= link_to "", list_path(list), class: 'card-link'  %>
+      </div>
     <% end %>
   </div>
 </div>
