@@ -10,14 +10,14 @@
   <% if @list.movies.any? %>
     <div class="mt-5">
       <h3>Top Movie</h3>
-      <div class="selected-movie" data-counter-target="selected-movie">
+      <div class="selected-movie" data-movie-target="selected">
         <%= render 'movies/selected', movie: @list.movies.first %>
       </div>
       <br>
       <h3>Movies</h3>
       <div class="owl-carousel owl-theme">
         <% @list.movies.each do |movie| %>
-          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)" data-action="click->movie#select">
+          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)" data-action="click->movie#select" data-template='<%= ActionController::Base.new.render_to_string(partial: 'movies/selected', locals: { movie: movie }) %>'>
             <%= movie.title %>
           </div>
         <% end %>

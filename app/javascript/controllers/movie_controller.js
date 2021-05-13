@@ -1,11 +1,13 @@
-import { Controller } from "stimulus";
+import { Controller } from 'stimulus';
 
 export default class extends Controller {
-  static targets = [ 'selectedMovie' ];
+  static targets = [ 'selected' ];
 
-  connect() {};
+  connect() {
+    console.log(this.selectedTarget);
+  };
 
   select(event) {
-    console.log(event);
+    this.selectedTarget.innerHTML = event.currentTarget.dataset.template
   }
 }
