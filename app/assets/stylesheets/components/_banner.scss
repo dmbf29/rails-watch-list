@@ -18,3 +18,16 @@
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.lighter {
+  font-size: 0.8em;
+  opacity: 0.8;
+  a {
+    color: white;
+    opacity: 0.8;
+  }
+  a:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
