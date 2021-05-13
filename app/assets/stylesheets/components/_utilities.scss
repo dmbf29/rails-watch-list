@@ -1,0 +1,19 @@
+.lighter {
+  font-size: 0.8em;
+  opacity: 0.8;
+  a {
+    color: white;
+    opacity: 0.8;
+  }
+  a:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.no-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 75px;
+  width: 100%;
+}

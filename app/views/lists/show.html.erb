@@ -1,8 +1,21 @@
 <div class="container mt-5">
-  <h3><span class="lighter"><%= link_to 'Lists', root_path %> > </span> <%= @list.name%></h3>
+  <h1><span class="lighter"><%= link_to 'Lists', root_path %> > </span> <%= @list.name%></h3>
   <% if @list.movies.any? %>
-    <div class="selected-movie">
-      <%= render 'movies/selected', movie: @list.movies.first %>
+    <div class="mt-5">
+      <h3>Top Movie</h3>
+      <div class="selected-movie">
+        <%= render 'movies/selected', movie: @list.movies.first %>
+      </div>
+      <br>
+      <h3>Movies</h3>
+      <div class="owl-carousel owl-theme">
+        <% @list.movies.each do |movie| %>
+          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+            <%= movie.title %>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-primary mt-5'  %>
     </div>
   <% else %>
     <div class="text-center">
