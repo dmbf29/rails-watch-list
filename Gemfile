@@ -33,6 +33,7 @@ gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'httparty'
 gem 'simple_form'
 
 group :development, :test do
