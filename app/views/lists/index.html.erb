@@ -24,7 +24,7 @@
       <div class="list-show">
         <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
           <%= movie.title %>
-          <%= link_to new_bookmark_movie_path(movie), class: 'card-add' do %>
+          <%= link_to new_movie_bookmark_path(movie), class: 'card-add' do %>
             <i class="fas fa-plus-square"></i>
           <% end %>
         </div>

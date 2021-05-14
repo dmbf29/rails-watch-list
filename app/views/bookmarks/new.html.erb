@@ -1,7 +1,11 @@
 <div class="container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-      <h1>Add Movie to <%= @list.name %></h1>
+      <% if @list %>
+        <h1>Add Movie to <%= @list.name %></h1>
+      <% elsif @movie %>
+        <h1>Add <%= @movie.title %> to List</h1>
+      <% end %>
       <%= render 'bookmarks/form' %>
     </div>
   </div>
