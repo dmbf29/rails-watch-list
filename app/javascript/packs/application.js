@@ -14,9 +14,10 @@ import 'owl.carousel';
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initSelect2();
   $('.owl-carousel').owlCarousel({
     // stagePadding: 8,
     loop: true,

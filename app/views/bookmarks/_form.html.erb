@@ -1,13 +1,13 @@
 <% if @list %>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment, placeholder: 'Recommended by Trouni, has to be good.' %>
-    <%= f.association :movie, collection: Movie.where.not(id: @list.movies).order(:title), include_blank: false %>
+    <%= f.association :movie, collection: Movie.where.not(id: @list.movies).order(:title), include_blank: false, input_html: { class: 'select2' } %>
     <%= f.submit 'Add', class: 'btn btn-primary' %>
   <% end %>
 <% elsif @movie %>
   <%= simple_form_for [@movie, @bookmark] do |f| %>
     <%= f.input :comment, placeholder: 'Recommended by Trouni, has to be good.' %>
-    <%= f.association :list, collection: List.where.not(id: @movie.lists).order(:name), include_blank: false %>
+    <%= f.association :list, collection: List.where.not(id: @movie.lists).order(:name), include_blank: false, input_html: { class: 'select2' } %>
     <%= f.submit 'Add', class: 'btn btn-primary' %>
   <% end %>
 <% end %>
