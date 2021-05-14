@@ -28,6 +28,15 @@
   width: 100%
 }
 
+.card-add {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .card-product {
   overflow: hidden;
   height: 132px;

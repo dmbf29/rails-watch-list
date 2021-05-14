@@ -18,10 +18,17 @@
       <%= render 'lists/card', list: list %>
     <% end %>
   </div>
-  <h3>Trending</h3>
+  <h3>New Movie Suggestions</h3>
   <div class="owl-carousel owl-theme">
-    <% @lists.shuffle.each do |list| %>
-      <%= render 'lists/card', list: list %>
+    <% @movies.each do |movie| %>
+      <div class="list-show">
+        <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)">
+          <%= movie.title %>
+          <%= link_to new_bookmark_movie_path(movie), class: 'card-add' do %>
+            <i class="fas fa-plus-square"></i>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
