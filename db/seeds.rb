@@ -33,8 +33,31 @@ lists = [
   { name: 'Sports', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/26bd.png' }
 ]
 
+lists = [
+  { api_id: 28, name: "Action", url: },
+  { api_id: 12, name: "Adventure", url: },
+  { api_id: 16, name: "Animation", url: },
+  { api_id: 35, name: "Comedy", url: },
+  { api_id: 80, name: "Crime", url: },
+  { api_id: 99, name: "Documentary", url: },
+  { api_id: 18, name: "Drama", url: },
+  { api_id: 10751, name: "Family", url: },
+  { api_id: 14, name: "Fantasy", url: },
+  { api_id: 36, name: "History", url: },
+  { api_id: 27, name: "Horror", url: },
+  { api_id: 10402, name: "Music", url: },
+  { api_id: 9648, name: "Mystery", url: },
+  { api_id: 10749, name: "Romance", url: },
+  { api_id: 878, name: "Science Fiction", url: },
+  { api_id: 10770, name: "TV Movie", url: },
+  { api_id: 53, name: "Thriller", url: },
+  { api_id: 10752, name: "War", url: },
+  { api_id: 37, name: "Western", url: }
+]
+
+
 lists.each do |list_info|
-  list = List.create!(name: list_info[:name])
+  list = List.create!(name: list_info[:name], api_id: list_info[:api_id])
   puts "Getting photo for #{list_info[:name]}..."
   file = URI.open(list_info[:url])
   list.photo.attach(io: file, filename: 'emoji.png', content_type: 'image/png')
