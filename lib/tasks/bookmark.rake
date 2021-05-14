@@ -1,6 +1,9 @@
 namespace :bookmark do
   desc 'Adding Movies to Lists'
   task generate_all: :environment do
+    puts 'Destroying previous bookmarks...'
+    Bookmark.destroy_all
+
     comments = [
       'A friend recommended this one.',
       'The critics speak highly of this one.',
@@ -14,14 +17,13 @@ namespace :bookmark do
       response = FetchMoviesService.new(list.api_id).call
 
       response['results'].each do |movie_hash|
-        puts movie_hash['title']
-        puts
-        movie = Movie.create!(
+        puts "Creating or selecting: #{movie_hash['title']}"
+        movie = Movie.where(
           title: movie_hash['title'],
           overview: movie_hash['overview'],
           poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
           rating: movie_hash['vote_average'].to_f
-        )
+        ).first_or_create!
 
         Bookmark.create(
           movie: movie,
