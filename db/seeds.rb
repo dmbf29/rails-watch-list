@@ -50,7 +50,7 @@ lists = [
   { api_id: 10402, name: 'Music', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f3b5.png' },
   { api_id: 9648, name: 'Mystery', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f50e.png' },
   { api_id: 10749, name: 'Romance', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f618.png' },
-  { api_id: 878, name: 'Science Fiction', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f47d.png' },
+  { api_id: 878, name: 'Sci-Fi', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f47d.png' },
   { api_id: 10770, name: 'TV Movie', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f4fa.png' },
   { api_id: 53, name: 'Thriller', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/1f575.png' },
   { api_id: 10752, name: 'War', url: 'https://images.emojiterra.com/openmoji/v12.2/128px/2694.png' },
