@@ -12,12 +12,24 @@ class BuildPopularMoviesService
       headers: headers
     )
     response['results'].map do |movie_hash|
-      Movie.where(
-        title: movie_hash['title'],
-        overview: movie_hash['overview'],
-        poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
-        rating: movie_hash['vote_average'].to_f
-      ).first_or_create
+      movie = Movie.find_by(title: movie_hash['title'])
+      if movie
+        movie.update(
+          title: movie_hash['title'],
+          overview: movie_hash['overview'],
+          poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
+          rating: movie_hash['vote_average'].to_f
+        )
+        movie
+      else
+        movie = Movie.create(
+          title: movie_hash['title'],
+          overview: movie_hash['overview'],
+          poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
+          rating: movie_hash['vote_average'].to_f
+        )
+        movie
+      end
     end
   end
 end
