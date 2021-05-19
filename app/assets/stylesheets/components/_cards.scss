@@ -20,8 +20,20 @@
   top: 4px;
   left: 4px;
   font-weight: lighter;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  border-radius: 4px;
   .fa-star {
     color: $yellow;
+  }
+}
+
+.card-subinfo {
+  padding: 16px;
+  background-color: #714d78;
+  text-align: center;
+  .fas {
+    margin: 0 8px;
   }
 }
 

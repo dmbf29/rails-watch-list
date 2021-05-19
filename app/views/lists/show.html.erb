@@ -11,16 +11,16 @@
     <div class="mt-5">
       <h3>Top Movie</h3>
       <div class="selected-movie" data-movie-target="selected">
-        <%= render 'movies/selected', movie: @list.movies.first %>
+        <%= render 'movies/selected', movie: @list.bookmarks.first.movie, bookmark: @list.bookmarks.first %>
       </div>
       <br>
       <h3>Movies</h3>
       <div class="owl-carousel owl-theme">
-        <% @list.movies.each do |movie| %>
-          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)" data-action="click->movie#select" data-template='<%= ActionController::Base.new.render_to_string(partial: 'movies/selected', locals: { movie: movie }) %>'>
-            <%= movie.title %>
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= bookmark.movie.poster_url %>)" data-action="click->movie#select" data-template='<%= ActionController::Base.new.render_to_string(partial: 'movies/selected', locals: { movie: bookmark.movie, bookmark: bookmark }) %>'>
+            <%= bookmark.movie.title %>
             <div class="card-rating">
-              <i class="fas fa-star"></i> <%= movie.rating %>
+              <i class="fas fa-star"></i> <%= bookmark.movie.rating %>
             </div>
           </div>
         <% end %>
