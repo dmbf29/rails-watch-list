@@ -19,6 +19,9 @@
         <% @list.movies.each do |movie| %>
           <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= movie.poster_url %>)" data-action="click->movie#select" data-template='<%= ActionController::Base.new.render_to_string(partial: 'movies/selected', locals: { movie: movie }) %>'>
             <%= movie.title %>
+            <div class="card-rating">
+              <i class="fas fa-star"></i> <%= movie.rating %>
+            </div>
           </div>
         <% end %>
       </div>

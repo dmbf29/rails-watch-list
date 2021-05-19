@@ -15,6 +15,16 @@
   transition: transform 500ms;
 }
 
+.card-rating {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-weight: lighter;
+  .fa-star {
+    color: $yellow;
+  }
+}
+
 .list-show {
   .card-category {
     font-size: 16px;
