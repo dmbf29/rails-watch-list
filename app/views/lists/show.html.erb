@@ -31,4 +31,5 @@
       <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-primary'  %>
     </div>
   <% end %>
+  <%= link_to 'Remove', list_path(@list), method: :delete, data: { confirm: "Hey hold up. Should you be delete this whole list?" }, class: 'purple'  %>
 </div>
