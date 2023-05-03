@@ -1,6 +1,7 @@
 class Movie < ApplicationRecord
-  has_many :bookmarks
-  has_many :lists, through: :bookmarks
+  self.table_name = "watch_l_movies"
+  has_many :bookmarks, foreign_key: "watch_l_bookmark_id"
+  has_many :lists, through: :bookmarks, foreign_key: "watch_l_list_id"
   validates :title, uniqueness: true, presence: true
 end
 
