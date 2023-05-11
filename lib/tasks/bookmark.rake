@@ -21,7 +21,7 @@ namespace :bookmark do
         movie = Movie.where(
           title: movie_hash['title']
         ).first_or_create
-        move.update(
+        movie.update(
           overview: movie_hash['overview'],
           poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
           rating: movie_hash['vote_average'].to_f
