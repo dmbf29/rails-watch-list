@@ -19,11 +19,13 @@ namespace :bookmark do
       response['results'].each do |movie_hash|
         puts "Creating or selecting: #{movie_hash['title']}"
         movie = Movie.where(
-          title: movie_hash['title'],
+          title: movie_hash['title']
+        ).first_or_create
+        move.update(
           overview: movie_hash['overview'],
           poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
           rating: movie_hash['vote_average'].to_f
-        ).first_or_create!
+        )
 
         Bookmark.create(
           movie: movie,
